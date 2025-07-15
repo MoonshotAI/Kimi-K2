@@ -478,7 +478,7 @@ Kimi K2 is a state-of-the-art mixture-of-experts (MoE) language model with 32 bi
 <sup>
 • Bold denotes global SOTA, and underlined denotes open-source SOTA.
 </sup><br/><sup>
-• Data points marked with * are taken directly from the model's tech report or blog.
+• Data points marked with * are directly from the model's tech report or blog.
 </sup><br/><sup>
 • All metrics, except for SWE-bench Verified (Agentless), are evaluated with an 8k output token length. SWE-bench Verified (Agentless) is limited to a 16k output token length.
 </sup><br/><sup>
@@ -654,9 +654,9 @@ Kimi K2 is a state-of-the-art mixture-of-experts (MoE) language model with 32 bi
 >
 > The Anthropic-compatible API maps temperature by `real_temperature = request_temperature * 0.6` for better compatiblity with existing applications.
 
-Our model checkpoints are stored in the block-fp8 format, you can find it on [Huggingface](https://huggingface.co/moonshotai/Kimi-K2-Instruct).
+Our model checkpoints are stored in block-fp8 format, you can find it on [Huggingface](https://huggingface.co/moonshotai/Kimi-K2-Instruct).
 
-Currently, Kimi-K2 is recommended to run on the following inference engines:
+Currently, It is recommended to run Kimi-K2 on the following inference engines:
 
 * vLLM
 * SGLang
@@ -671,7 +671,7 @@ Deployment examples for vLLM and SGLang can be found in the [Model Deployment Gu
 
 ### Chat Completion
 
-Once the local inference service is up, you can interact with it through the chat endpoint:
+Once the local inference service is set up, you can interact with it through the chat endpoint:
 
 ```python
 def simple_chat(client: OpenAI, model_name: str):
@@ -774,10 +774,10 @@ For streaming output and manual tool-parsing, see the [Tool Calling Guide](docs/
 
 ## 6. License
 
-Both the code repository and the model weights are released under the [Modified MIT License](LICENSE).
+Both the code and the model weights are released under the [Modified MIT License](LICENSE).
 
 ---
 
 ## 7. Contact Us
 
-If you have any questions, please reach out at [support@moonshot.cn](mailto:support@moonshot.cn).
+If you have any questions or concerns, please reach out to us at [support@moonshot.cn](mailto:support@moonshot.cn).
