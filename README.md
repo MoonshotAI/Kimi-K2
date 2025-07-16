@@ -656,7 +656,7 @@ Kimi K2 is a state-of-the-art mixture-of-experts (MoE) language model with 32 bi
 
 Our model checkpoints are stored in block-fp8 format, you can find it on [Huggingface](https://huggingface.co/moonshotai/Kimi-K2-Instruct).
 
-Currently, It is recommended to run Kimi-K2 on the following inference engines:
+Currently, it is recommended to run Kimi-K2 on the following inference engines:
 
 * vLLM
 * SGLang
