@@ -1,0 +1,15 @@
+PackageIdentifier: GitHub.cli
+PackageVersion: 2.83.2
+ManifestType: locale
+PackageName: GitHub CLI
+Publisher: GitHub
+License: MIT
+ShortDescription: The GitHub CLI brings GitHub to your terminal.
+Description: |
+  GitHub CLI (gh) is a command line tool that brings GitHub features to your terminal.
+  Use it to create issues, pull requests, view repositories, and more.
+Tags:
+  - developer
+  - git
+  - github
+  - cli
