@@ -1,0 +1,13 @@
+PackageIdentifier: GitHub.cli
+PackageVersion: 2.83.2
+ManifestType: version
+DefaultLocale: en-US
+Publisher: GitHub
+License: MIT
+HomeURL: https://github.com/cli/cli
+Commands:
+  - gh
+Changelog: |
+  - Release 2.83.2: bug fixes and improvements
+
+# Note: Update installer references in the installer manifest.

@@ -1,0 +1,23 @@
+PackageIdentifier: GitHub.cli
+PackageVersion: 2.83.2
+ManifestType: installer
+Locale: en-US
+Installers:
+  - Architecture: x64
+    InstallerType: msi
+    InstallerUrl: https://github.com/cli/cli/releases/download/v2.83.2/gh_2.83.2_windows_amd64.msi
+    InstallerSha256: 4D296C785AFA586F75B505A6B7B875F17F727A97EB85589771D8B18E6AE541C8
+    InstallerFailCodes:
+      - 1641
+      - 3010
+    InstallerSwitches:
+      Windows:
+        Silent: /quiet
+        SilentWithReboot: /quiet /norestart
+        InstallLocation: ""
+  - Architecture: x86
+    InstallerType: msi
+    InstallerUrl: https://github.com/cli/cli/releases/download/v2.83.2/gh_2.83.2_windows_386.msi
+    InstallerSha256: 7D0C7AE7AEC849DE43D9A241EDB474095AD0C6AF2E51FE881C943F2199BAD357
+
+# IMPORTANT: Replace InstallerSha256 values with real SHAs before publishing.
