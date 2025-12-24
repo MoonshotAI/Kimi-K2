@@ -74,7 +74,7 @@ while finish_reason is None or finish_reason == "tool_calls":
             tool_call_name = tool_call.function.name
             tool_call_arguments = json.loads(tool_call.function.arguments) 
             tool_function = tool_map[tool_call_name] 
-            tool_result = tool_function(tool_call_arguments)
+            tool_result = tool_function(**tool_call_arguments)
             print("tool_result", tool_result)
 
             messages.append({
@@ -198,7 +198,7 @@ while True:
             tool_call_name = tool_call['function']['name']
             tool_call_arguments = json.loads(tool_call['function']['arguments'])
             tool_function = tool_map[tool_call_name]
-            tool_result = tool_function(tool_call_arguments)
+            tool_result = tool_function(**tool_call_arguments)
 
             messages.append({
                 "role": "tool",
