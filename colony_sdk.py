@@ -87,6 +87,7 @@ def make_colony_router(config: ColonyConfig) -> APIRouter:
       GET  /colony/manifest
       POST /colony/events
       GET  /colony/agents
+      GET  /colony/capabilities
     """
     router = APIRouter(prefix="/colony", tags=["colony"])
 
@@ -117,11 +118,42 @@ def make_colony_router(config: ColonyConfig) -> APIRouter:
             "port": config.port,
         }
 
+    @router.get("/capabilities")
+    def capabilities():
+        """colony.json identity + live status — mirrors THEHIVE's /colony/capabilities."""
+        import json as _json
+        identity: Dict[str, Any] = {}
+        here = os.path.dirname(os.path.abspath(__file__))
+        for candidate in (os.path.join(here, "colony.json"),
+                          os.path.join(here, "..", "colony.json"),
+                          "colony.json"):
+            try:
+                with open(os.path.normpath(candidate)) as f:
+                    identity = _json.load(f)
+                break
+            except Exception:
+                continue
+        if not identity:
+            identity = {
+                "colony_id": config.colony_id,
+                "colony_name": config.colony_name,
+                "role": config.role,
+                "version": config.version,
+            }
+        return {
+            **identity,
+            "status": "healthy",
+            "uptime_s": round(time.monotonic() - _START_MONOTONIC, 1),
+            "soul_md_hash": _soul_hash(config.soul_md_path),
+            "health_endpoint": "/colony/health",
+            "capabilities_endpoint": "/colony/capabilities",
+        }
+
     @router.get("/manifest")
     def manifest():
         standard_endpoints = [
             "/colony/health", "/colony/info", "/colony/manifest",
-            "/colony/events", "/colony/agents",
+            "/colony/events", "/colony/agents", "/colony/capabilities",
         ]
         return {
             "colony_id": config.colony_id,
