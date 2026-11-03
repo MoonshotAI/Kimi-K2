@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this model, please cite it as below."
+preferred-citation:
+  type: misc
+  title: "Kimi K2: Open Agentic Intelligence"
+  authors:
+    - name: "Kimi Team"
+  year: 2025
+  eprint: 2507.20534
+  archivePrefix: arXiv
+  primaryClass: cs.LG
+  url: https://arxiv.org/abs/2507.20534
+  license: "Modified MIT"

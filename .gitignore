@@ -1,0 +1,15 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Secrets — never commit real credentials
+.env
+*.key
